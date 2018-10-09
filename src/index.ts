@@ -75,6 +75,7 @@ export interface VuePluginOptions {
    * ```
    */
   css?: boolean
+  useSpfxThemeLoading?: boolean
   compiler?: VueTemplateCompiler
   compilerParseOptions?: VueTemplateCompilerParseOptions
   sourceRoot?: string
@@ -251,15 +252,18 @@ export default function VuePlugin(opts: VuePluginOptions = {}): Plugin {
               descriptor.script.lang || 'js',
               'script'
             )}'
+            ${opts.useSpfxThemeLoading === true ? `import { loadStyles } from '@microsoft/load-themed-styles` : ''}
             import script from '${createVuePartRequest(
               filename,
               descriptor.script.lang || 'js',
               'script'
             )}'
+            ${opts.useSpfxThemeLoading === true ? `script.beforeCreate = () => {loadStyles('${input.styles.map((style: StyleCompileResult) => style.code).join('\n').replace(/(\r?\n|[\s])+/g, ' ')}')}` : ''}
             export default script
             `
             }
-          : { code: '' }
+          : { code: '' };
+          //input.styles = [];
 
         if (shouldExtractCss) {
           input.styles = input.styles

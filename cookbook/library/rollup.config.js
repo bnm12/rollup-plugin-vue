@@ -8,9 +8,7 @@ export default [
       format: 'esm',
       file: 'dist/MyComponent.esm.js'
     },
-    plugins: [
-      vue()
-    ]
+    plugins: [vue()]
   },
   // SSR build.
   {
@@ -19,9 +17,7 @@ export default [
       format: 'cjs',
       file: 'dist/MyComponent.ssr.js'
     },
-    plugins: [
-      vue({ template: { optimizeSSR: true } })
-    ]
+    plugins: [vue({ template: { optimizeSSR: true } })]
   },
   // Browser build.
   {
@@ -30,8 +26,6 @@ export default [
       format: 'iife',
       file: 'dist/MyComponent.js'
     },
-    plugins: [
-      vue()
-    ]
+    plugins: [vue()]
   }
 ]

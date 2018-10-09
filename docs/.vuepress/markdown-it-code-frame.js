@@ -23,12 +23,17 @@ module.exports = function codeFrame(md, options = {}) {
 
     const start = pos + 3
     const end = state.skipSpacesBack(max, pos)
-    const rawPath = state.src.slice(start, end).trim().replace(/^@/, root)
+    const rawPath = state.src
+      .slice(start, end)
+      .trim()
+      .replace(/^@/, root)
     const filename = rawPath.split(/[{:\s]/).shift()
-    const content = fs.existsSync(filename) ? fs.readFileSync(filename).toString() : 'Not found: ' + filename
+    const content = fs.existsSync(filename)
+      ? fs.readFileSync(filename).toString()
+      : 'Not found: ' + filename
     const meta = rawPath.replace(filename, '')
 
-    state.line = startLine + 1;
+    state.line = startLine + 1
 
     token = state.push('fence', 'code', 0)
     token.info = filename.split('.').pop() + meta

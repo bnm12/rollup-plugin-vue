@@ -6,7 +6,5 @@ export default {
     format: 'esm',
     file: 'dist/MyComponent.js'
   },
-  plugins: [
-    vue()
-  ]
+  plugins: [vue()]
 }

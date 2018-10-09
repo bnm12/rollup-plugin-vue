@@ -6,7 +6,5 @@ export default {
     format: 'esm',
     file: 'dist/MyComponent.js'
   },
-  plugins: [
-    vue({ template: { optimizeSSR: true } })
-  ]
+  plugins: [vue({ template: { optimizeSSR: true } })]
 }

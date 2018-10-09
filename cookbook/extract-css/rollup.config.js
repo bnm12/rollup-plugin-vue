@@ -7,8 +7,5 @@ export default {
     format: 'esm',
     file: 'dist/MyComponent.js'
   },
-  plugins: [
-    css(),
-    vue({ css: false })
-  ]
+  plugins: [css(), vue({ css: false })]
 }
