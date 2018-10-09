@@ -252,7 +252,7 @@ export default function VuePlugin(opts: VuePluginOptions = {}): Plugin {
               descriptor.script.lang || 'js',
               'script'
             )}'
-            ${opts.useSpfxThemeLoading === true ? `import { loadStyles } from '@microsoft/load-themed-styles` : ''}
+            ${opts.useSpfxThemeLoading === true ? `import { loadStyles } from '@microsoft/load-themed-styles'` : ''}
             import script from '${createVuePartRequest(
               filename,
               descriptor.script.lang || 'js',

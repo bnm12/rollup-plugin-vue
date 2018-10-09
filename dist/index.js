@@ -130,7 +130,7 @@ function VuePlugin(opts = {}) {
                         ? {
                             code: `
             export * from '${utils_1.createVuePartRequest(filename, descriptor.script.lang || 'js', 'script')}'
-            ${opts.useSpfxThemeLoading === true ? `import { loadStyles } from '@microsoft/load-themed-styles` : ''}
+            ${opts.useSpfxThemeLoading === true ? `import { loadStyles } from '@microsoft/load-themed-styles'` : ''}
             import script from '${utils_1.createVuePartRequest(filename, descriptor.script.lang || 'js', 'script')}'
             ${opts.useSpfxThemeLoading === true ? `script.beforeCreate = () => {loadStyles('${input.styles.map((style) => style.code).join('\n').replace(/(\r?\n|[\s])+/g, ' ')}')}` : ''}
             export default script
