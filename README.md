@@ -2,6 +2,10 @@
   <img src="https://raw.githubusercontent.com/vuejs/rollup-plugin-vue/master/logo.png">
 </div>
 
+## Changes in this fork
+This fork has been modified to have an extra config option: useSpfxThemeLoading. 
+This will make rollup-plugin-vue output all styles as wrapped in the loadStyles method from @microsoft/load-themed-styles to facilitate using spfx themes to style your webparts
+
 ## Introduction
 
 As vue-loader is for webpack and vueify is for browserify, similarly its for rollup. As we know, webpack and browserify concat stuff and make it runnable in browser. Its difficult to share .vue components. **Now roll your [Vue](http://vuejs.org/) components.**
