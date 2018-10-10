@@ -263,7 +263,10 @@ export default function VuePlugin(opts: VuePluginOptions = {}): Plugin {
             `
             }
           : { code: '' };
-          //input.styles = [];
+
+          if(opts.useSpfxThemeLoading === true) { 
+            input.styles = [];
+          }
 
         if (shouldExtractCss) {
           input.styles = input.styles
